@@ -77,7 +77,7 @@ public class SplashActivity extends Activity {
 		splash_id.startAnimation(aa);
 		aa.setAnimationListener(new AnimationListener() {
 			@Override
-			public void onAnimationEnd(Animation arg0) {
+			public void onAnimationEnd(Animation animation) {
 				Intent it = new Intent(SplashActivity.this, MainActivity.class);
 				startActivity(it);
 				finish();
