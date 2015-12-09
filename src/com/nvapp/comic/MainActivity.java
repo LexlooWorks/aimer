@@ -17,6 +17,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -78,7 +80,7 @@ public class MainActivity extends FragmentActivity {
 		vc = getVersionCode(this);
 		chekedVersionCode();
 
-		ActionBar ab = getActionBar();
+		final ActionBar ab = getActionBar();
 
 		ab.setDisplayHomeAsUpEnabled(true);
 		ab.setHomeButtonEnabled(true);
@@ -122,6 +124,7 @@ public class MainActivity extends FragmentActivity {
 					// initFragment(new EveryDayEnglishFragment());
 
 					setTitle("每日一句");
+					ab.setBackgroundDrawable(new ColorDrawable(Color.RED));
 					break;
 				case 1:
 					// initFragment(new OtherFragment());
