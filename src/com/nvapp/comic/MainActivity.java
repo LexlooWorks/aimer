@@ -9,10 +9,12 @@ import com.nvapp.comic.lib.drawer.DrawerArrowDrawable;
 import com.nvapp.comic.lib.view.RoundedImageView;
 import com.nvapp.comic.toast.Crouton;
 import com.nvapp.comic.toast.Style;
+import com.nvapp.mupdf.ChoosePDFActivity;
 
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -121,10 +123,14 @@ public class MainActivity extends FragmentActivity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				switch (position) {
 				case 0:
+					ComponentName cn = new ComponentName("com.nvapp.comic", "com.nvapp.mupdf.ChoosePDFActivity");
+					Intent intent = new Intent();
+					intent.setComponent(cn);
+					startActivity(intent);
 					// initFragment(new EveryDayEnglishFragment());
 
-					setTitle("每日一句");
-					ab.setBackgroundDrawable(new ColorDrawable(Color.RED));
+					// setTitle("每日一句");
+					// ab.setBackgroundDrawable(new ColorDrawable(Color.RED));
 					break;
 				case 1:
 					// initFragment(new OtherFragment());
