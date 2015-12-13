@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.nvapp.comic.cache.ACache;
 import com.nvapp.comic.common.DoubleClickExitHelper;
+import com.nvapp.comic.fragment.HomeFragment;
 import com.nvapp.comic.lib.drawer.ActionBarDrawerToggle;
 import com.nvapp.comic.lib.drawer.DrawerArrowDrawable;
 import com.nvapp.comic.lib.view.RoundedImageView;
@@ -123,10 +124,11 @@ public class MainActivity extends FragmentActivity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				switch (position) {
 				case 0:
-					ComponentName cn = new ComponentName("com.nvapp.comic", "com.nvapp.mupdf.ChoosePDFActivity");
-					Intent intent = new Intent();
-					intent.setComponent(cn);
-					startActivity(intent);
+					// ComponentName cn = new ComponentName("com.nvapp.comic",
+					// "com.nvapp.mupdf.ChoosePDFActivity");
+					// Intent intent = new Intent();
+					// intent.setComponent(cn);
+					// startActivity(intent);
 					// initFragment(new EveryDayEnglishFragment());
 
 					// setTitle("每日一句");
@@ -137,7 +139,7 @@ public class MainActivity extends FragmentActivity {
 					setTitle("精选美文");
 					break;
 				case 2:
-					// initFragment(new HomeFragment());
+					initFragment(new HomeFragment());
 					setTitle("精美卡片");
 
 					break;
@@ -310,7 +312,6 @@ public class MainActivity extends FragmentActivity {
 		changeFragment(f, false);
 	}
 
-	// 初始化Fragment(FragmentActivity中呼叫)
 	public void initFragment(Fragment f) {
 		changeFragment(f, true);
 	}
