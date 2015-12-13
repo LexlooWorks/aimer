@@ -5,24 +5,22 @@ import java.io.File;
 import com.nvapp.comic.cache.ACache;
 import com.nvapp.comic.common.DoubleClickExitHelper;
 import com.nvapp.comic.fragment.HomeFragment;
+import com.nvapp.comic.lib.dialog.SweetAlertDialog;
 import com.nvapp.comic.lib.drawer.ActionBarDrawerToggle;
 import com.nvapp.comic.lib.drawer.DrawerArrowDrawable;
 import com.nvapp.comic.lib.view.RoundedImageView;
 import com.nvapp.comic.toast.Crouton;
 import com.nvapp.comic.toast.Style;
-import com.nvapp.mupdf.ChoosePDFActivity;
 
 import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.PendingIntent;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -363,13 +361,68 @@ public class MainActivity extends FragmentActivity {
 			System.out.println("false");
 			return;
 		}
-
 	}
 
-	/**
-	 * 检查是否版本更新
-	 */
 	public void chekedVersionCode() {
+		// Ion.with(this, Conf.VERSION_CODE).asJsonObject().setCallback(new
+		// FutureCallback<JsonObject>() {
+		//
+		// @Override
+		// public void onCompleted(Exception e, JsonObject result) {
+		// if (e != null) {
+		// return;
+		// }
+		// String code = result.get("code").getAsString();
+		// int jsonCode = Integer.parseInt(code);
+		// // 比较开源中国返回的code跟当前版本code是否一致
+		// if (jsonCode == vc) {
+		// return;
+		// } else if (jsonCode > vc) {
+		//
+		// CountDownTimer timer = new CountDownTimer(12 * 100, 100) {
+		//
+		// @Override
+		// public void onTick(long millisUntilFinished) {
+		// long a = millisUntilFinished / 100;
+		//
+		// if (a == 1) {
+		// new SweetAlertDialog(MainActivity.this,
+		// SweetAlertDialog.WARNING_TYPE)
+		// .setTitleText("版本检测").setContentText("发现新版本，是否更新？").setCancelText("暂不更新")
+		// .setConfirmText("马上更新").showCancelButton(true)
+		// .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+		// @Override
+		// public void onClick(SweetAlertDialog sDialog) {
+		// sDialog.dismiss();
+		// }
+		// }).setConfirmClickListener(new
+		// SweetAlertDialog.OnSweetClickListener() {
+		// @Override
+		// public void onClick(SweetAlertDialog sDialog) {
+		// Intent updateIntent = new Intent(MainActivity.this,
+		// AppUpdateService.class);
+		// updateIntent.putExtra("titleId", R.string.app_name);
+		// startService(updateIntent);
+		// sDialog.dismiss();
+		//
+		// }
+		// }).show();
+		// } else {
+		//
+		// }
+		// }
+		//
+		// @Override
+		// public void onFinish() {
+		//
+		// }
+		// };
+		//
+		// timer.start();
+		// }
+		//
+		// }
+		// });
 	}
 
 	public PendingIntent getDefalutIntent(int flags) {
