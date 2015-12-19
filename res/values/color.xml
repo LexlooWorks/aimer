@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="maingrid_item_bg">#ffe8ecef</color>
+    <color name="maingrid_item_text">#ff333333</color>
+    <color name="maingrid_item_line">#ffd3dde6</color>
     <color name="primary">#009688</color>
     <color name="primary_pressed">#26a69a</color>
     <color name="ldrawer_color">#FFFFFF</color>
