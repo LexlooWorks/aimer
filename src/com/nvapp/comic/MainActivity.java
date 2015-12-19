@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -69,6 +70,15 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			setTranslucentStatus(true);
+		}
+
+		SystemBarTintManager tintManager = new SystemBarTintManager(this);
+		tintManager.setStatusBarTintEnabled(true);
+		tintManager.setStatusBarTintResource(R.color.actionbar_color);// 通知栏所需颜色
+
 		mCache = ACache.get(this);
 		mDoubleClickExitHelper = new DoubleClickExitHelper(this);
 		toprl = (RelativeLayout) findViewById(R.id.toprl);
