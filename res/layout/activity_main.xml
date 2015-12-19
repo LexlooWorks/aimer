@@ -5,6 +5,7 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
@@ -13,10 +14,12 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
            >
+
         </FrameLayout>
     </RelativeLayout>
 
     <RelativeLayout
+        android:fitsSystemWindows="true"
         android:id="@+id/rl"
         android:layout_width="@dimen/navdrawer_width"
         android:layout_height="match_parent"
